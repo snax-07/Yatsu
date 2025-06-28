@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-red: #ff3131;
+  --neon-cyan: #00ffff;
+  --neon-orange: #ff6a00;
+  --neon-turquoise: #00d1ff;
+  --bg-dark: #0f0f0f;
+  --bg-card: #181818;
+  --bright-orange: #ff4d00;
+  --neon-lime: #d4ff00;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  font-family: var(--font-orbitron);
+}
+
+.neon-glow {
+  text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+}
+
+.neon-border {
+  box-shadow: 0 0 10px currentColor, inset 0 0 10px currentColor;
+}
+
+.neon-button {
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px currentColor;
+}
+
+.neon-button:hover {
+  box-shadow: 0 0 30px currentColor, 0 0 40px currentColor;
+  transform: translateY(-2px);
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+.glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+.grow-animation {
+  animation: growAnimation 3s ease-in-out infinite;
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(255, 77, 0, 0.5), 0 0 40px rgba(212, 255, 0, 0.3);
+}
+
+.glow-border {
+  box-shadow: 0 0 20px rgba(255, 77, 0, 0.1), inset 0 0 20px rgba(212, 255, 0, 0.05);
+}
+
+.glow-input:focus {
+  box-shadow: 0 0 20px rgba(255, 77, 0, 0.3), 0 0 40px rgba(212, 255, 0, 0.2);
+}
+
+.glow-button {
+  box-shadow: 0 0 30px rgba(255, 77, 0, 0.4), 0 0 60px rgba(212, 255, 0, 0.3);
+}
+
+.glow-button:hover {
+  box-shadow: 0 0 40px rgba(255, 77, 0, 0.6), 0 0 80px rgba(212, 255, 0, 0.4);
+}
+
+.glow-tag {
+  box-shadow: 0 0 10px rgba(255, 77, 0, 0.3), 0 0 20px rgba(212, 255, 0, 0.2);
+}
+
+.quantico {
+  font-family: var(--font-quantico);
+}
+
+.font-orbitron {
+  font-family: var(--font-orbitron);
+}
+
+.font-audiowide {
+  font-family: var(--font-audiowide);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+  }
+  to {
+    text-shadow: 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+}
+
+@keyframes growAnimation {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.floating-robot {
+  animation: floatingRobot 3s ease-in-out infinite;
+}
+
+.floating-robot-container {
+  animation: robotGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatingRobot {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-6px) rotate(0.5deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-6px) rotate(-0.5deg);
+  }
+}
+
+@keyframes robotGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff, inset 0 0 30px rgba(0, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px #ff3131, 0 0 80px #ff3131, inset 0 0 40px rgba(255, 49, 49, 0.1);
+  }
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-cyan);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-red);
+}
+
+/* Staggered animations for feature cards */
+.animate-on-scroll:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.animate-on-scroll:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.animate-on-scroll:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.animate-on-scroll:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.animate-on-scroll:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.animate-on-scroll:nth-child(6) {
+  animation-delay: 0.6s;
+}
