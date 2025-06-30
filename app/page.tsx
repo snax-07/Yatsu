@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="relative bg-[#0F0F0F]">
       <Sidebar />
-      <div className="ml-0 lg:ml-20 relative">
+      <div className="lg:ml-20 relative">
         <Hero />
         <About />
         <TechTracks />

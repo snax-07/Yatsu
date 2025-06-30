@@ -1,6 +1,6 @@
 "use client"
 
-import { Mail, Instagram, Twitter, Linkedin, Briefcase, Camera, Heart } from "lucide-react"
+import { Mail, Instagram, Twitter, Linkedin } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 const socialLinks = [
@@ -8,12 +8,6 @@ const socialLinks = [
   { icon: Instagram, label: "Instagram", value: "@YASH@yash1234", href: "#" },
   { icon: Twitter, label: "Twitter", value: "@YASH@yash1234", href: "#" },
   { icon: Linkedin, label: "LinkedIn", value: "yatsu025@gmail.com", href: "#" },
-]
-
-const iconFeatures = [
-  { icon: Briefcase, label: "Professional" },
-  { icon: Heart, label: "Community" },
-  { icon: Camera, label: "Creative" },
 ]
 
 export default function Footer() {
@@ -42,21 +36,6 @@ export default function Footer() {
           >
             REGISTER NOW
           </button>
-        </div>
-
-        {/* Icon Features */}
-        <div className="flex justify-center space-x-12 mb-16">
-          {iconFeatures.map((feature, index) => {
-            const Icon = feature.icon
-            return (
-              <div
-                key={index}
-                className="w-16 h-16 bg-turquoise-400 rounded-full flex items-center justify-center hover:scale-110 hover:bg-turquoise-300 transition-all duration-300 cursor-pointer neon-glow"
-              >
-                <Icon size={32} className="text-black" />
-              </div>
-            )
-          })}
         </div>
 
         {/* Contact & Socials */}

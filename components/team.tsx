@@ -7,6 +7,7 @@ const founder = {
   role: "Founder & Leader",
   emoji: "👨‍💼",
   description: "Leading the vision and strategy for YÄ~TSU Squad's growth and innovation.",
+  linkedin: "https://www.linkedin.com/in/yash-srivastava-514252322/",
 }
 
 const teamMembers = [
@@ -15,36 +16,42 @@ const teamMembers = [
     role: "Project Manager",
     emoji: "👩‍💻",
     description: "Coordinating projects and ensuring smooth workflow across all team initiatives.",
+    linkedin: "https://www.linkedin.com/in/arshil-anwar-16baa3309",
   },
   {
     name: "Amrita",
     role: "Frontend Developer",
     emoji: "👩‍💻",
     description: "Creating beautiful and responsive user interfaces with modern web technologies.",
+    linkedin: "https://www.linkedin.com/in/amrita-kumari-343960345/",
   },
   {
-    name: "Ujjwal",
+    name: "Ujjwall Saroj",
     role: "Designer",
     emoji: "👨‍🎨",
     description: "Crafting stunning visual designs and user experiences for our community.",
+    linkedin: "https://www.linkedin.com/in/ujjwal-s-0922b3346/",
   },
   {
-    name: "Roshni",
+    name: "Roshni Roy",
     role: "Social Media Manager",
     emoji: "👩‍💼",
     description: "Building our online presence and engaging with the tech community.",
+    linkedin: "https://www.linkedin.com/in/roshni-roy-70856535b/",
   },
   {
-    name: "Swapnil Nadel",
+    name: "Swapnil Nade",
     role: "Backend Developer",
     emoji: "👨‍💻",
     description: "Developing robust server-side solutions and database architectures.",
+    linkedin: "https://www.linkedin.com/in/swapnil-nade-417242296/",
   },
   {
     name: "Shivam Srivastava",
     role: "Event Coordinator",
     emoji: "👨‍🔧",
     description: "Organizing workshops, hackathons, and community events for skill development.",
+    linkedin: "https://www.linkedin.com/in/shivam-srivastava-4033b8350",
   },
 ]
 
@@ -86,7 +93,9 @@ export default function Team() {
             <p className="text-orange-500 mb-2 text-base">{founder.role}</p>
             <p className="text-white text-xs mb-3">{founder.description}</p>
             <a
-              href="#"
+              href={founder.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block px-3 py-1 border border-orange-500 rounded-full text-orange-500 hover:bg-orange-500 hover:text-black transition text-xs"
             >
               LinkedIn
@@ -106,7 +115,9 @@ export default function Team() {
               <p className="text-cyan-400 mb-2 text-sm">{member.role}</p>
               <p className="text-white text-xs mb-3">{member.description}</p>
               <a
-                href="#"
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block px-3 py-1 border border-cyan-400 rounded-full text-cyan-400 hover:bg-cyan-400 hover:text-black transition text-xs"
               >
                 LinkedIn
