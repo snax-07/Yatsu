@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const defaultConfig = require("tailwindcss/defaultConfig")
-const shadcnConfig = require("shadcn/ui/tailwind.config")
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   darkMode: ["class"],
@@ -9,17 +8,16 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@shadcn/ui/**/*.{js,ts,jsx,tsx}", // include shadcn components
   ],
   theme: {
-    ...shadcnConfig.theme,
     extend: {
       fontFamily: {
-        orbitron: ["var(--font-orbitron)"],
-        audiowide: ["var(--font-audiowide)"],
-        quantico: ["var(--font-quantico)"],
+        orbitron: ["var(--font-orbitron)", ...defaultTheme.fontFamily.sans],
+        audiowide: ["var(--font-audiowide)", ...defaultTheme.fontFamily.sans],
+        quantico: ["var(--font-quantico)", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        ...shadcnConfig.theme.extend.colors,
         "neon-red": "#FF3131",
         "neon-cyan": "#00FFFF",
         "neon-orange": "#FF6A00",
@@ -34,5 +32,5 @@ module.exports = {
       },
     },
   },
-  plugins: [...shadcnConfig.plugins, require("tailwindcss-animate")],
-}
+  plugins: [require("tailwindcss-animate")],
+};

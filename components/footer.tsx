@@ -1,19 +1,13 @@
 "use client"
 
-import { Mail, Instagram, Twitter, Linkedin, Briefcase, Camera, Heart } from "lucide-react"
+import { Mail, Instagram, Twitter, Linkedin } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 const socialLinks = [
   { icon: Mail, label: "Email", value: "yatsu025@gmail.com", href: "mailto:yatsu025@gmail.com" },
-  { icon: Instagram, label: "Instagram", value: "@YASH@yash1234", href: "#" },
-  { icon: Twitter, label: "Twitter", value: "@YASH@yash1234", href: "#" },
-  { icon: Linkedin, label: "LinkedIn", value: "yatsu025@gmail.com", href: "#" },
-]
-
-const iconFeatures = [
-  { icon: Briefcase, label: "Professional" },
-  { icon: Heart, label: "Community" },
-  { icon: Camera, label: "Creative" },
+  { icon: Instagram, label: "Instagram", value: "official_yatsu", href: "https://www.instagram.com/official_yatsu" },
+  { icon: Twitter, label: "Twitter", value: "@yatsu_4", href: "https://x.com/yatsu_4" },
+  { icon: Linkedin, label: "LinkedIn", value: "ya~tsu-squad", href: "https://www.linkedin.com/company/ya-tsu-squad/" },
 ]
 
 export default function Footer() {
@@ -44,21 +38,6 @@ export default function Footer() {
           </button>
         </div>
 
-        {/* Icon Features */}
-        <div className="flex justify-center space-x-12 mb-16">
-          {iconFeatures.map((feature, index) => {
-            const Icon = feature.icon
-            return (
-              <div
-                key={index}
-                className="w-16 h-16 bg-turquoise-400 rounded-full flex items-center justify-center hover:scale-110 hover:bg-turquoise-300 transition-all duration-300 cursor-pointer neon-glow"
-              >
-                <Icon size={32} className="text-black" />
-              </div>
-            )
-          })}
-        </div>
-
         {/* Contact & Socials */}
         <div className="text-center space-y-8">
           <h3 className="text-2xl font-bold text-turquoise-400 neon-glow">Contact & Socials</h3>
@@ -85,7 +64,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center mt-16 pt-8 border-t border-gray-800">
-          <p className="text-gray-400">© 2024 YÄ~TSU Squad. Built with ❤️ for the tech community.</p>
+          <p className="text-gray-400">© 2025 YÄ~TSU Squad. Built with ❤️ for the tech community.</p>
         </div>
       </div>
     </footer>

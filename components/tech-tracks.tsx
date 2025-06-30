@@ -173,27 +173,7 @@ export default function TechTracks() {
           </div>
         </div>
 
-        {/* Stats - Auto-play continues here */}
-        <div className="text-center mt-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-cyan-400">6+</div>
-              <div className="text-gray-400 text-sm">Tech Tracks</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-red-500">500+</div>
-              <div className="text-gray-400 text-sm">Students</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-orange-500">50+</div>
-              <div className="text-gray-400 text-sm">Projects</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-500">24/7</div>
-              <div className="text-gray-400 text-sm">Support</div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   )

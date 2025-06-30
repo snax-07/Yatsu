@@ -33,7 +33,10 @@ export default function Hero() {
             REGISTER NOW
           </button>
 
-          <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-bold rounded-full neon-button hover:bg-cyan-400 hover:text-black transition-all duration-300 text-lg">
+          <button
+            onClick={() => window.open('https://linktr.ee/yatsusqad', '_blank')}
+            className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-bold rounded-full neon-button hover:bg-cyan-400 hover:text-black transition-all duration-300 text-lg"
+          >
             JOIN OUR COMMUNITY
           </button>
         </div>

@@ -72,8 +72,8 @@ export default function About() {
               <div className="text-center space-y-4">
                 <div className="w-36 h-36 mx-auto bg-gradient-to-br from-cyan-500/20 to-red-500/20 rounded-full flex items-center justify-center relative overflow-hidden floating-robot-container">
                   <img
-                    src="/robot-assistant.png"
-                    alt="YÄ~TSU Squad AI Assistant"
+                    src="/placeholder-logo.svg"
+                    alt="YÄ~TSU Squad Logo"
                     className="w-24 h-24 object-contain filter drop-shadow-lg floating-robot"
                   />
                   <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent via-cyan-500/10 to-transparent"></div>
