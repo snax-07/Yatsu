@@ -8,7 +8,7 @@ type NavItem = {
   id: string
   icon: React.ElementType
   label: string
-  isRegister?: boolean // Optional field in case needed in future
+  isRegister?: boolean
 }
 
 const navItems: NavItem[] = [
@@ -26,6 +26,7 @@ export default function Sidebar() {
 
   useEffect(() => {
     const handleScroll = () => {
+      const sections = navItems.map((item) => item.id)
       const scrollPosition = window.scrollY + 100
 
       for (const item of navItems) {
@@ -56,7 +57,7 @@ export default function Sidebar() {
   }
 
   return (
-    <nav className="fixed left-0 top-0 h-full w-20 bg-gray-900/80 backdrop-blur-sm z-50 flex flex-col items-center py-8 space-y-6 hidden sm:flex">
+    <nav className="fixed left-0 top-0 h-full w-20 bg-gray-900/80 backdrop-blur-sm z-50 flex-col items-center py-8 space-y-6 hidden lg:flex">
       {navItems.map((item) => {
         const Icon = item.icon
         const isActive = activeSection === item.id
@@ -74,7 +75,7 @@ export default function Sidebar() {
           >
             <Icon size={24} />
             {isActive && (
-              <div className="absolute inset-0 rounded-lg bg-red-500/20 neon-border border border-red-500 pointer-events-none"></div>
+              <div className="absolute inset-0 rounded-lg bg-red-500/20 neon-border border border-red-500"></div>
             )}
             <span className="absolute left-full ml-4 px-2 py-1 bg-gray-900 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
               {item.label}

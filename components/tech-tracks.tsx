@@ -64,13 +64,12 @@ export default function TechTracks() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
-  // Auto-slide functionality
   useEffect(() => {
     if (!isAutoPlaying) return
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % tracks.length)
-    }, 2000) // Change slide every 2 seconds
+    }, 2000)
 
     return () => clearInterval(interval)
   }, [isAutoPlaying])
@@ -172,8 +171,6 @@ export default function TechTracks() {
             ))}
           </div>
         </div>
-
-
       </div>
     </section>
   )
