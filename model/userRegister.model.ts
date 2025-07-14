@@ -29,6 +29,7 @@ interface userReg {
     freindRef : string,
     other : string,
     refrenceSocialMediaPlatform : refSocialMediaPlatform,
+    leader : string,
     referCount : number
 }
 
@@ -54,8 +55,9 @@ const userRegister : Schema<userReg> = new Schema<userReg>({
     freindRef : {type : String , required : false , default : null},
     other : {type : String , required : false , default : null},
     refrenceSocialMediaPlatform : {type : String , required : false , default : null},
-    referCount : {type : Number , required : true , default : 0}
-})
+    referCount : {type : Number , required : true , default : 0},
+    leader : {type : String , required : false}
+} , {timestamps : true})
 
 
 const User = models.User || model<userReg>("User" , userRegister);

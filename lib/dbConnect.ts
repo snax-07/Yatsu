@@ -22,3 +22,5 @@ async function dbConnect() {
         process.exit();
     }
 }
+
+export default dbConnect;

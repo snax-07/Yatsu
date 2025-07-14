@@ -32,3 +32,5 @@ async function uploadFile(fileBuffer : Buffer){
         process.exit();
     }
 }
+
+export default uploadFile;
