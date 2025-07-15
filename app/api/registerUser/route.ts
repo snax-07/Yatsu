@@ -20,38 +20,47 @@ export async function POST(req : NextRequest){
             status : false
         } , {status : 201})
 
-        const addReferCount = User.findOne({userID : friendReferenceId});
+        if(friendReferenceId){
+            await User.findOne({userID : friendReferenceId} , { $inc : {referCount : 1}});
+        }
     
 
-        const fileArrayBuffer = await resume.arrayBuffer();
-        const fileBuffer = Buffer.from(fileArrayBuffer);
-        const response =  uploadFile(fileBuffer);
+        console.log(resume)
+        // const fileArrayBuffer = await resume.arrayBuffer();
+        // const fileBuffer = Buffer.from(fileArrayBuffer);
+        // const response =  uploadFile(fileBuffer);
 
-        const newUser = new User({
-            userID : nanoid.toString(),
-            name : name,
-            email : email,
-            address : address,
-            instaAccountLink : instagram || null,
-            linkedinAccountLink : linkedin,
-            githubAccountLink : github,
-            githubAccountUsername : githubUsername,
-            collegeName : college,
-            graduationYear : graduationYear,
-            collegeYear : currentYear,
-            attendStatus : attendOutOfState,
-            gender : gender,
-            laptopHave : hasLaptop,
-            mainRefrence : refernceSource,
-            codingLanguages : codingLanguages,
-            freindRef : friendReferenceId || null,
-            other : otherDescription || null,
-            refrenceSocialMediaPlatform : socialMedia || null,
-            leader : leader || null,
-            referCount : 0,
-            resumeLink : null
-        })
 
+
+        // const newUser = new User({
+        //     userID : nanoid.toString(),
+        //     name : name,
+        //     email : email,
+        //     address : address,
+        //     instaAccountLink : instagram || null,
+        //     linkedinAccountLink : linkedin,
+        //     githubAccountLink : github,
+        //     githubAccountUsername : githubUsername,
+        //     collegeName : college,
+        //     graduationYear : graduationYear,
+        //     collegeYear : currentYear,
+        //     attendStatus : attendOutOfState,
+        //     gender : gender,
+        //     laptopHave : hasLaptop,
+        //     mainRefrence : refernceSource,
+        //     codingLanguages : codingLanguages,
+        //     freindRef : friendReferenceId || null,
+        //     other : otherDescription || null,
+        //     refrenceSocialMediaPlatform : socialMedia || null,
+        //     leader : leader || null,
+        //     referCount : 0,
+        //     resumeLink : null
+        // });
+
+        // await newUser.save();
+
+
+        // console.log(name , email , address , instagram , linkedin , github ,githubUsername , college , graduationYear , currentYear , resume, codingLanguages , attendOutOfState , gender , hasLaptop , phone , refernceSource  ,  friendReferenceId , otherDescription , socialMedia , leader )
         return NextResponse.json({
             message : "User is registered succefully !!!",
             status : true

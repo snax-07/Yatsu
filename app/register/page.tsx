@@ -6,6 +6,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import AnimatedBackground from "@/components/animated-background-form"
 import TagInput from "@/components/tag-input"
+import axios from 'axios'
 import {
   Upload,
   User,
@@ -131,8 +132,9 @@ export default function RegisterPage() {
 
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    console.log(formData.resume)
+    const response = await axios.post('/api/registerUser' , formData);
+    console.log(response.data.message)
 
     router.push("/register/confirmation")
   }
