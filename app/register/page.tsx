@@ -8,7 +8,6 @@ import AnimatedBackground from "@/components/animated-background-form"
 import TagInput from "@/components/tag-input"
 import axios from 'axios'
 import {
-  Upload,
   User,
   Mail,
   MapPin,
@@ -33,7 +32,6 @@ interface FormData {
   college: string
   graduationYear: string
   currentYear: string
-  resume: File | null
   codingLanguages: string[]
   attendOutOfState: string
   gender: string
@@ -59,7 +57,6 @@ export default function RegisterPage() {
     college: "",
     graduationYear: "",
     currentYear: "",
-    resume: null,
     codingLanguages: [],
     attendOutOfState: "",
     gender: "",
@@ -79,29 +76,6 @@ export default function RegisterPage() {
     setFormData((prev) => ({ ...prev, [field]: value }))
     if (errors[field]) {
       setErrors((prev) => ({ ...prev, [field]: "" }))
-    }
-  }
-
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]
-    if (file) {
-      if (file.size > 20 * 1024 * 1024) {
-        setErrors((prev) => ({ ...prev, resume: "File size must be less than 20MB" }))
-        return
-      }
-      const allowedTypes = [
-        "application/pdf",
-        "application/msword",
-        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        "image/jpeg",
-        "image/png",
-      ]
-      if (!allowedTypes.includes(file.type)) {
-        setErrors((prev) => ({ ...prev, resume: "Only PDF, DOC, and Image files are allowed" }))
-        return
-      }
-      setFormData((prev) => ({ ...prev, resume: file }))
-      setErrors((prev) => ({ ...prev, resume: "" }))
     }
   }
 
@@ -132,7 +106,7 @@ export default function RegisterPage() {
 
     setIsSubmitting(true)
 
-    console.log(formData.resume)
+
     const response = await axios.post('/api/registerUser' , formData);
     console.log(response.data.message)
 
@@ -321,30 +295,6 @@ export default function RegisterPage() {
                   <option value="Fourth Year">Fourth Year</option>
                 </select>
                 {errors.currentYear && <p className="text-red-400 text-sm mt-1">{errors.currentYear}</p>}
-              </div>
-
-              {/* Resume Upload */}
-              <div className="mb-8">
-                <label className="block text-white font-semibold mb-2">
-                  <Upload className="inline w-4 h-4 mr-2" />
-                  Resume Upload
-                </label>
-                <div className="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center hover:border-[#FF4D00] transition-colors duration-300">
-                  <input
-                    type="file"
-                    onChange={handleFileUpload}
-                    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
-                    className="hidden"
-                    id="resume-upload"
-                  />
-                  <label htmlFor="resume-upload" className="cursor-pointer">
-                    <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-                    <p className="text-gray-300">Click to upload your resume</p>
-                    <p className="text-sm text-gray-500 mt-1">PDF, DOC, Image • Max 20MB</p>
-                  </label>
-                  {formData.resume && <p className="text-[#D4FF00] mt-2">✓ {formData.resume.name}</p>}
-                </div>
-                {errors.resume && <p className="text-red-400 text-sm mt-1">{errors.resume}</p>}
               </div>
 
               {/* Coding Languages */}
