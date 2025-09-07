@@ -136,7 +136,9 @@ export default function RegisterPage() {
       const response = await axios.post("/api/registerUser", formData)
 
       console.log("Success:", response.data.message)
-      router.push("/register/confirmation")
+      if(response.data.status){
+        
+      }
     } catch (error) {
       console.error("Submission failed:", error)
     } finally {
