@@ -1,3 +1,6 @@
+export const runtime = 'nodejs';
+
+
 import { google } from 'googleapis';
 
 export async function update(data: any[]) {
