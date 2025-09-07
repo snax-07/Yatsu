@@ -137,7 +137,7 @@ export default function RegisterPage() {
 
       console.log("Success:", response.data.message)
       if(response.data.status){
-        
+        router.push('/register/confirmation')
       }
     } catch (error) {
       console.error("Submission failed:", error)
