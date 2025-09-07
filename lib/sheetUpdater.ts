@@ -7,10 +7,9 @@ import path from 'path'
 export async function update(data : any){
     try{
 
-      console.log(process.env.NEXT_PUBLIC_TEST)
 const auth = new JWT({
-  email: process.env.NEXT_PUBLIC_ID,
-  key: process.env.NEXT_PUBLIC_KEY,
+  email: process.env.GOOGLE_SERVICE_ACCOUNT_ID,
+  key: process.env.GOOGLE_SERVICE_ACCOUNT_KEY,
   scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
 
