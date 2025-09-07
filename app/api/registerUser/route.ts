@@ -6,8 +6,10 @@ import dbConnect from "@/lib/dbConnect";
 import User from "@/model/userRegister.model";
 import {nanoid} from "nanoid";
 import {update} from '@/lib/sheetUpdater'
+
+
 export async function POST(req : NextRequest){
-    dbConnect();
+    await dbConnect();
 
     try {
         const {name , email , address , instagram , linkedin , github ,githubUsername , college , graduationYear , currentYear , resume, codingLanguages , attendOutOfState , gender , hasLaptop , phone , referenceSource  ,  friendReferenceId , otherDescription , socialMedia , leader } = await req.json();
