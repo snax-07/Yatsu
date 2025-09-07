@@ -25,7 +25,7 @@ export async function POST(req : NextRequest){
             await User.findOne({userID : friendReferenceId} , { $inc : {referCount : 1}});
         }
 
-        await update([name , email , address , instagram , linkedin , github , githubUsername , college , graduationYear , currentYear , attendOutOfState , gender , hasLaptop , phone , referenceSource]);
+        // await update([name , email , address , instagram , linkedin , github , githubUsername , college , graduationYear , currentYear , attendOutOfState , gender , hasLaptop , phone , referenceSource]);
         const newUser = new User({
             userID : nanoid(),
             name : name,
