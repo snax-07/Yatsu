@@ -5,7 +5,6 @@ import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "@/lib/dbConnect";
 import User from "@/model/userRegister.model";
 import {nanoid} from "nanoid";
-import {update} from '@/lib/sheetUpdater'
 
 
 export async function POST(req : NextRequest){
@@ -23,9 +22,8 @@ export async function POST(req : NextRequest){
 
         if(friendReferenceId){
             await User.findOne({userID : friendReferenceId} , { $inc : {referCount : 1}});
-        }
+        };
 
-        await update([name , email , address , instagram , linkedin , github , githubUsername , college , graduationYear , currentYear , attendOutOfState , gender , hasLaptop , phone , referenceSource]);
         const newUser = new User({
             userID : nanoid(),
             name : name,
